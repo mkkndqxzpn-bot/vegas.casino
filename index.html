@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VegasCasino - Crypto Casino Demo</title>
+    <title>VegasCasino - Crypto Casino</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Mobilni sidebar ikone -->
+    <!-- Sidebar ikone za mobil -->
     <div class="sidebar">
-        <div class="sidebar-icon">🏆</div> <!-- Raffle -->
-        <div class="sidebar-icon">🎰</div> <!-- Casino -->
-        <div class="sidebar-icon">⚽</div> <!-- Sports -->
-        <div class="sidebar-icon">🎁</div> <!-- Promotions -->
-        <div class="sidebar-icon">💰</div> <!-- Rewards -->
-        <div class="sidebar-icon">🛡️</div> <!-- Safe -->
-        <div class="sidebar-icon">🎧</div> <!-- Support -->
-        <div class="sidebar-icon">🌍</div> <!-- Language -->
+        <div class="icon">🏆</div>
+        <div class="icon">🎰</div>
+        <div class="icon">⚽</div>
+        <div class="icon">🎁</div>
+        <div class="icon">💰</div>
+        <div class="icon">🛡️</div>
+        <div class="icon">🎧</div>
+        <div class="icon">🌍</div>
     </div>
 
     <header>
@@ -35,46 +35,46 @@
         </nav>
     </header>
 
-    <!-- Hero Raffle Banner -->
+    <!-- Raffle banner -->
     <section class="hero">
         <div class="raffle">
             <h2>$100,000 Weekly Raffle</h2>
             <p id="countdown">2d 3h 43m 0s</p>
-            <button>Learn More</button>
+            <button class="learn-more">Learn More</button>
             <span>Your Tickets: 0</span>
         </div>
     </section>
 
-    <!-- VegasCasino Originals -->
-    <section class="section originals">
+    <!-- Originals -->
+    <section class="section">
         <h3>VegasCasino Originals</h3>
         <div class="game-grid">
-            <div class="game-card original">
-                <img src="https://computing.net/wp-content/uploads/Origninals.jpg" alt="Originals">
+            <div class="game-card">
+                <img src="https://i.imgur.com/0kL3z1j.png" alt="Plinko">
                 <h4>PLINKO</h4>
                 <div class="buttons">
                     <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
-            <div class="game-card original">
-                <img src="https://slotcatalog.com/userfiles/image/games/roobet-games/42782/dice-roobet-games-7084692.webp" alt="Dice">
+            <div class="game-card">
+                <img src="https://i.imgur.com/9bY0w0Z.png" alt="Dice">
                 <h4>DICE</h4>
                 <div class="buttons">
                     <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
-            <div class="game-card original">
-                <img src="https://crashbetz.com/wp-content/uploads/2024/02/Roobet-crash-game-thumbnail.jpg" alt="Crash">
+            <div class="game-card">
+                <img src="https://i.imgur.com/4vZ8j8K.png" alt="Crash">
                 <h4>CRASH</h4>
                 <div class="buttons">
                     <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
-            <div class="game-card original">
-                <img src="https://res.cloudinary.com/d-shine/image/upload/v1663845361/EMD/mines.bet/mines-pres_1_keutr6.png" alt="Mines">
+            <div class="game-card">
+                <img src="https://i.imgur.com/Jt5e5lP.png" alt="Mines">
                 <h4>MINES</h4>
                 <div class="buttons">
                     <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
@@ -86,11 +86,11 @@
 
     <!-- Pragmatic Play Slots -->
     <section class="section">
-        <h3>Pragmatic Play Top Slots</h3>
+        <h3>Top Slots</h3>
         <div class="game-grid">
             <div class="game-card" onclick="openDemo('vs20fruitsw', 'Sweet Bonanza')">
-                <div class="bonus-badge">100% Bonus + FS</div>
-                <img src="https://assets.actionnetwork.com/157126_sweet-bonanza-super-scatter.webp" alt="Sweet Bonanza">
+                <div class="bonus-badge">100% + FS</div>
+                <img src="https://i.imgur.com/8pK9r0j.jpg" alt="Sweet Bonanza">
                 <h4>Sweet Bonanza</h4>
                 <p>RTP: 96.48%</p>
                 <div class="buttons">
@@ -98,9 +98,10 @@
                     <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
                 </div>
             </div>
+
             <div class="game-card" onclick="openDemo('vs20olympgate', 'Gates of Olympus')">
                 <div class="bonus-badge">Free Spins</div>
-                <img src="https://assets.actionnetwork.com/287_gates-of-olympus-1000.jpg" alt="Gates of Olympus">
+                <img src="https://i.imgur.com/0kR4v9Z.jpg" alt="Gates of Olympus">
                 <h4>Gates of Olympus</h4>
                 <p>RTP: 96.50%</p>
                 <div class="buttons">
@@ -108,9 +109,10 @@
                     <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
                 </div>
             </div>
+
             <div class="game-card" onclick="openDemo('vs10bbbonanza', 'Big Bass Bonanza')">
                 <div class="bonus-badge">200% Bonus</div>
-                <img src="https://content.hollywoodbets.net/Big_Bass_Bonanza_1000_untagged_a893565aa9.webp" alt="Big Bass Bonanza">
+                <img src="https://i.imgur.com/3qL8p7X.jpg" alt="Big Bass Bonanza">
                 <h4>Big Bass Bonanza</h4>
                 <p>RTP: 96.71%</p>
                 <div class="buttons">
@@ -118,13 +120,38 @@
                     <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
                 </div>
             </div>
-            <!-- Dodaj več, če hočeš – imam še več URL-jev -->
+
+            <div class="game-card" onclick="openDemo('vs20doghouse', 'The Dog House')">
+                <img src="https://i.imgur.com/7kP2m9L.jpg" alt="The Dog House">
+                <h4>The Dog House</h4>
+                <p>RTP: 96.51%</p>
+                <div class="buttons">
+                    <button class="demo-btn" onclick="event.stopPropagation(); openDemo('vs20doghouse', 'The Dog House')">Demo</button>
+                    <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Modali ostanejo enaki kot prej -->
-    <div id="demoModal" class="modal"> ... (kopiraj iz prejšnje kode) </div>
-    <div id="realModal" class="modal"> ... (kopiraj iz prejšnje kode) </div>
+    <!-- Demo Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3 id="gameTitle">Loading game...</h3>
+            <iframe id="demoFrame" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Real Play Modal -->
+    <div id="realModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Play for Real Money</h3>
+            <p>Please login or register to continue.</p>
+            <button class="login modal-btn">Login</button>
+            <button class="register modal-btn">Sign Up</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
