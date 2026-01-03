@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyRoobet - Vegas.casino</title>
+    <title>MyRoobet - Crypto Casino Demo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
+        <div class="logo">MyRoobet</div>
         <div class="wallet">
             <span>$0.00</span>
             <button class="deposit">+</button>
@@ -18,75 +19,37 @@
             <a href="#">Promotions</a>
             <a href="#">Rewards</a>
             <button class="login">Login</button>
-            <button class="register">Register</button>
+            <button class="register">Sign Up</button>
         </nav>
     </header>
 
-    <!-- Hero Raffle Banner kot na Roobetu -->
+    <!-- Hero Raffle Banner -->
     <section class="hero">
-        <div class="raffle-banner">
+        <div class="raffle">
             <h2>$100,000 Weekly Raffle</h2>
-            <p id="timer">2d 3h 43m</p>
+            <p id="countdown">Loading timer...</p>
             <button>Learn More</button>
             <span>Your Tickets: 0</span>
         </div>
     </section>
 
-    <!-- Originals sekcija kot na Roobetu -->
-    <section class="section">
-        <h3>Roobet Originals</h3>
-        <div class="game-grid">
-            <div class="game-card original"><img src="https://via.placeholder.com/300x200/9f2aff/ffffff?text=PLINKO" alt="Plinko"><h4>PLINKO</h4></div>
-            <div class="game-card original"><img src="https://via.placeholder.com/300x200/ff2a6d/ffffff?text=DICE" alt="Dice"><h4>DICE</h4></div>
-            <div class="game-card original"><img src="https://via.placeholder.com/300x200/60d394/ffffff?text=CRASH" alt="Crash"><h4>CRASH</h4></div>
-            <div class="game-card original"><img src="https://via.placeholder.com/300x200/ffba08/ffffff?text=MINES" alt="Mines"><h4>MINES</h4></div>
-        </div>
-    </section>
-
-    <!-- Pragmatic Play Slots -->
-    <section class="section">
-        <h3>Pragmatic Play Slots</h3>
+    <!-- Games Grid -->
+    <section class="games-section">
+        <h3>Pragmatic Play Top Slots</h3>
         <div class="game-grid">
             <!-- Sweet Bonanza -->
-            <div class="game-card">
-                <div class="bonus-badge">100% Bonus</div>
-                <img src="https://pragmaticplay.com/wp-content/uploads/2023/08/sweet-bonanza.png" alt="Sweet Bonanza">
+            <div class="game-card" onclick="openDemo('vs20fruitsw', 'Sweet Bonanza')">
+                <div class="bonus-badge">100% Bonus + FS</div>
+                <img src="https://www.pragmaticplay.com/en/games/sweet-bonanza-slot/wp-content/uploads/sites/2/2022/10/sweet-bonanza-featured-image-1.png" alt="Sweet Bonanza">
                 <h4>Sweet Bonanza</h4>
                 <p>RTP: 96.48%</p>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="openDemo('vs20fruitsw')">Demo Play</button>
-                    <button class="real-btn" onclick="realPlay()">Real Play</button>
+                    <button class="demo-btn" onclick="event.stopPropagation(); openDemo('vs20fruitsw', 'Sweet Bonanza')">Demo</button>
+                    <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
                 </div>
             </div>
 
             <!-- Gates of Olympus -->
-            <div class="game-card">
+            <div class="game-card" onclick="openDemo('vs20olympgate', 'Gates of Olympus')">
                 <div class="bonus-badge">Free Spins</div>
-                <img src="https://pragmaticplay.com/wp-content/uploads/2023/08/gates-of-olympus.png" alt="Gates">
-                <h4>Gates of Olympus</h4>
-                <p>RTP: 96.50%</p>
-                <div class="buttons">
-                    <button class="demo-btn" onclick="openDemo('vs20olympgate')">Demo Play</button>
-                    <button class="real-btn" onclick="realPlay()">Real Play</button>
-                </div>
-            </div>
-
-            <!-- Big Bass Bonanza -->
-            <div class="game-card">
-                <div class="bonus-badge">200% Bonus</div>
-                <img src="https://pragmaticplay.com/wp-content/uploads/2023/08/big-bass-bonanza.png" alt="Big Bass">
-                <h4>Big Bass Bonanza</h4>
-                <p>RTP: 96.71%</p>
-                <div class="buttons">
-                    <button class="demo-btn" onclick="openDemo('vs10bbbonanza')">Demo Play</button>
-                    <button class="real-btn" onclick="realPlay()">Real Play</button>
-                </div>
-            </div>
-
-            <!-- Dodaj še več po istem vzorcu – imam še 20+ thumbnailov in kod -->
-        </div>
-    </section>
-
-    <!-- Modal za demo in real (enako kot prej) -->
-    <div id="demoModal" class="modal">...</div> <!-- kopiraj iz prejšnjega -->
-    <div id="real
+                <img src="https://www.pragmaticplay.com/en
