@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyRoobet - Vegas.casino</title>
+    <title>MyRoobet - Crypto Casino Demo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Mobilni sidebar kot na Roobetu -->
+    <div class="sidebar">
+        <div class="sidebar-icon">🏆</div> <!-- Raffle -->
+        <div class="sidebar-icon">🎰</div> <!-- Casino -->
+        <div class="sidebar-icon">⚽</div> <!-- Sports -->
+        <div class="sidebar-icon">🎁</div> <!-- Promotions -->
+        <div class="sidebar-icon">💰</div> <!-- Rewards -->
+        <div class="sidebar-icon">🛡️</div> <!-- Safe -->
+        <div class="sidebar-icon">🎧</div> <!-- Support -->
+        <div class="sidebar-icon">🌍</div> <!-- Global -->
+    </div>
+
     <header>
-        <div class="logo">Vegas.casino</div>
+        <div class="logo">MyRoobet</div>
         <div class="wallet">
             <span>$0.00</span>
             <button class="deposit">+</button>
@@ -27,20 +39,58 @@
     <section class="hero">
         <div class="raffle">
             <h2>$100,000 Weekly Raffle</h2>
-            <p id="countdown">Loading timer...</p>
+            <p id="countdown">2d 3h 43m 0s</p>
             <button>Learn More</button>
             <span>Your Tickets: 0</span>
         </div>
     </section>
 
-    <!-- Games Grid -->
-    <section class="games-section">
+    <!-- Roobet Originals sekcija -->
+    <section class="section originals">
+        <h3>Roobet Originals</h3>
+        <div class="game-grid">
+            <div class="game-card original">
+                <img src="https://roobet.com/_next/image?url=%2Fimages%2Fgames%2Fplinko.png&w=256&q=75" alt="Plinko">
+                <h4>PLINKO</h4>
+                <div class="buttons">
+                    <button class="demo-btn">Demo</button>
+                    <button class="real-btn">Real Play</button>
+                </div>
+            </div>
+            <div class="game-card original">
+                <img src="https://roobet.com/_next/image?url=%2Fimages%2Fgames%2Fdice.png&w=256&q=75" alt="Dice">
+                <h4>DICE</h4>
+                <div class="buttons">
+                    <button class="demo-btn">Demo</button>
+                    <button class="real-btn">Real Play</button>
+                </div>
+            </div>
+            <div class="game-card original">
+                <img src="https://roobet.com/_next/image?url=%2Fimages%2Fgames%2Fcrash.png&w=256&q=75" alt="Crash">
+                <h4>CRASH</h4>
+                <div class="buttons">
+                    <button class="demo-btn">Demo</button>
+                    <button class="real-btn">Real Play</button>
+                </div>
+            </div>
+            <div class="game-card original">
+                <img src="https://roobet.com/_next/image?url=%2Fimages%2Fgames%2Fmines.png&w=256&q=75" alt="Mines">
+                <h4>MINES</h4>
+                <div class="buttons">
+                    <button class="demo-btn">Demo</button>
+                    <button class="real-btn">Real Play</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pragmatic Play Slots -->
+    <section class="section">
         <h3>Pragmatic Play Top Slots</h3>
         <div class="game-grid">
-            <!-- Sweet Bonanza -->
             <div class="game-card" onclick="openDemo('vs20fruitsw', 'Sweet Bonanza')">
                 <div class="bonus-badge">100% Bonus + FS</div>
-                <img src="https://www.pragmaticplay.com/en/games/sweet-bonanza-slot/wp-content/uploads/sites/2/2022/10/sweet-bonanza-featured-image-1.png" alt="Sweet Bonanza">
+                <img src="https://content.hollywoodbets.net/Sweet_Bonanza_1000_1000x600_185749b22c.webp" alt="Sweet Bonanza">
                 <h4>Sweet Bonanza</h4>
                 <p>RTP: 96.48%</p>
                 <div class="buttons">
@@ -48,8 +98,4 @@
                     <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
                 </div>
             </div>
-
-            <!-- Gates of Olympus -->
             <div class="game-card" onclick="openDemo('vs20olympgate', 'Gates of Olympus')">
-                <div class="bonus-badge">Free Spins</div>
-                <img src="https://www.pragmaticplay.com/en
