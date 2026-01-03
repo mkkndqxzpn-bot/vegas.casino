@@ -1,18 +1,23 @@
-// Countdown timer za raffle
+// Countdown timer
 function startTimer() {
     let days = 2, hours = 3, minutes = 43, seconds = 0;
+    const timerElement = document.getElementById('countdown');
     setInterval(() => {
-        if (seconds === 0) {
-            if (minutes === 0) {
-                if (hours === 0) {
-                    if (days === 0) return;
-                    days--; hours = 23;
-                } else hours--;
-                minutes = 59;
-            } else minutes--;
+        seconds--;
+        if (seconds < 0) {
             seconds = 59;
-        } else seconds--;
-        document.getElementById('countdown').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes = 59;
+            hours--;
+        }
+        if (hours < 0) {
+            hours = 23;
+            days--;
+        }
+        if (days < 0) days = 0; // Stop at 0
+        timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
 }
 startTimer();
@@ -34,5 +39,16 @@ function closeModal() {
 }
 
 window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) closeModal();
+    const modals = [document.getElementById('demoModal'), document.getElementById('realModal')];
+    modals.forEach(modal => {
+        if (event.target === modal) closeModal();
+    });
 }
+
+// Za originals gumbe - dodaj fake funkcijo, če hočeš (npr. alert('Coming soon'))
+document.querySelectorAll('.original .demo-btn').forEach(btn => {
+    btn.onclick = () => alert('Demo for Originals coming soon!');
+});
+document.querySelectorAll('.original .real-btn').forEach(btn => {
+    btn.onclick = () => realPlay();
+});
