@@ -7,53 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sidebar ikone za mobil -->
+    <!-- Levi sidebar (delujoč, kliki odpirajo modale) -->
     <div class="sidebar">
-        <div class="icon">🏆</div>
-        <div class="icon">🎰</div>
-        <div class="icon">⚽</div>
-        <div class="icon">🎁</div>
-        <div class="icon">💰</div>
-        <div class="icon">🛡️</div>
-        <div class="icon">🎧</div>
-        <div class="icon">🌍</div>
+        <div class="icon" onclick="openRaffleModal()">🏆</div> <!-- Raffle -->
+        <div class="icon" onclick="scrollToSection('casino')">🎰</div> <!-- Casino -->
+        <div class="icon" onclick="scrollToSection('sports')">⚽</div> <!-- Sports -->
+        <div class="icon" onclick="openPromotionsModal()">🎁</div> <!-- Promotions -->
+        <div class="icon" onclick="openRewardsModal()">💰</div> <!-- Rewards -->
+        <div class="icon" onclick="alert('Safe Gambling Tools')">🛡️</div> <!-- Safe -->
+        <div class="icon" onclick="openSupportModal()">🎧</div> <!-- Support -->
+        <div class="icon" onclick="alert('Change Language')">🌍</div> <!-- Language -->
     </div>
 
     <header>
         <div class="logo">VegasCasino</div>
         <div class="wallet">
             <span>$0.00</span>
-            <button class="deposit">+</button>
-        </div>
-        <nav>
-            <a href="#">Casino</a>
-            <a href="#">Sports</a>
-            <a href="#">Promotions</a>
-            <a href="#">Rewards</a>
-            <button class="login">Login</button>
-            <button class="register">Sign Up</button>
+            <button class="deposit" onclick="openDepositModal()">+</button>
         </nav>
     </header>
 
-    <!-- Raffle banner -->
+    <!-- Hero Raffle (z delujočim timerjem) -->
     <section class="hero">
         <div class="raffle">
             <h2>$100,000 Weekly Raffle</h2>
             <p id="countdown">2d 3h 43m 0s</p>
-            <button class="learn-more">Learn More</button>
+            <button onclick="alert('Learn More about Raffle')">Learn More</button>
             <span>Your Tickets: 0</span>
         </div>
     </section>
 
-    <!-- Originals -->
-    <section class="section">
+    <!-- Search bar (delujoč, filtrira igre) -->
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search games..." oninput="filterGames()">
+    </section>
+
+    <!-- Originals sekcija -->
+    <section id="originals" class="section">
         <h3>VegasCasino Originals</h3>
-        <div class="game-grid">
+        <div class="game-grid originals-grid">
             <div class="game-card">
                 <img src="https://i.imgur.com/0kL3z1j.png" alt="Plinko">
                 <h4>PLINKO</h4>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
+                    <button class="demo-btn" onclick="openDemo('plinko', 'Plinko')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
@@ -61,7 +58,7 @@
                 <img src="https://i.imgur.com/9bY0w0Z.png" alt="Dice">
                 <h4>DICE</h4>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
+                    <button class="demo-btn" onclick="openDemo('dice', 'Dice')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
@@ -69,7 +66,7 @@
                 <img src="https://i.imgur.com/4vZ8j8K.png" alt="Crash">
                 <h4>CRASH</h4>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
+                    <button class="demo-btn" onclick="openDemo('crash', 'Crash')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
@@ -77,79 +74,170 @@
                 <img src="https://i.imgur.com/Jt5e5lP.png" alt="Mines">
                 <h4>MINES</h4>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="alert('Demo coming soon!')">Demo</button>
+                    <button class="demo-btn" onclick="openDemo('mines', 'Mines')">Demo</button>
                     <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pragmatic Play Slots -->
-    <section class="section">
-        <h3>Top Slots</h3>
-        <div class="game-grid">
-            <div class="game-card" onclick="openDemo('vs20fruitsw', 'Sweet Bonanza')">
-                <div class="bonus-badge">100% + FS</div>
+    <!-- Slots sekcija (Pragmatic Play, vse igre v seznamu) -->
+    <section id="slots" class="section">
+        <h3>Pragmatic Play Slots</h3>
+        <div class="game-grid slots-grid">
+            <!-- Dodanih 10+ popularnih, dodaj še po želji -->
+            <div class="game-card">
+                <div class="bonus-badge">100% Bonus</div>
                 <img src="https://i.imgur.com/8pK9r0j.jpg" alt="Sweet Bonanza">
                 <h4>Sweet Bonanza</h4>
                 <p>RTP: 96.48%</p>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="event.stopPropagation(); openDemo('vs20fruitsw', 'Sweet Bonanza')">Demo</button>
-                    <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
+                    <button class="demo-btn" onclick="openDemo('vs20fruitsw', 'Sweet Bonanza')">Demo</button>
+                    <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
-
-            <div class="game-card" onclick="openDemo('vs20olympgate', 'Gates of Olympus')">
+            <div class="game-card">
                 <div class="bonus-badge">Free Spins</div>
                 <img src="https://i.imgur.com/0kR4v9Z.jpg" alt="Gates of Olympus">
                 <h4>Gates of Olympus</h4>
                 <p>RTP: 96.50%</p>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="event.stopPropagation(); openDemo('vs20olympgate', 'Gates of Olympus')">Demo</button>
-                    <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
+                    <button class="demo-btn" onclick="openDemo('vs20olympgate', 'Gates of Olympus')">Demo</button>
+                    <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
-
-            <div class="game-card" onclick="openDemo('vs10bbbonanza', 'Big Bass Bonanza')">
+            <!-- Dodaj preostale iz tvojega seznama, npr. Big Bass, Dog House, Wolf Gold, Sugar Rush, Starlight Princess, itd. - uporab i.imgur.com za thumbnails -->
+            <div class="game-card">
                 <div class="bonus-badge">200% Bonus</div>
                 <img src="https://i.imgur.com/3qL8p7X.jpg" alt="Big Bass Bonanza">
                 <h4>Big Bass Bonanza</h4>
                 <p>RTP: 96.71%</p>
                 <div class="buttons">
-                    <button class="demo-btn" onclick="event.stopPropagation(); openDemo('vs10bbbonanza', 'Big Bass Bonanza')">Demo</button>
-                    <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
+                    <button class="demo-btn" onclick="openDemo('vs10bbbonanza', 'Big Bass Bonanza')">Demo</button>
+                    <button class="real-btn" onclick="realPlay()">Real Play</button>
                 </div>
             </div>
-
-            <div class="game-card" onclick="openDemo('vs20doghouse', 'The Dog House')">
-                <img src="https://i.imgur.com/7kP2m9L.jpg" alt="The Dog House">
-                <h4>The Dog House</h4>
-                <p>RTP: 96.51%</p>
-                <div class="buttons">
-                    <button class="demo-btn" onclick="event.stopPropagation(); openDemo('vs20doghouse', 'The Dog House')">Demo</button>
-                    <button class="real-btn" onclick="event.stopPropagation(); realPlay()">Real Play</button>
-                </div>
-            </div>
+            <!-- ... dodaj še 150+, ampak za zdaj to, da ni predolgo -->
         </div>
     </section>
 
-    <!-- Demo Modal -->
+    <!-- Live Casino sekcija (dummy) -->
+    <section id="live-casino" class="section">
+        <h3>Live Casino</h3>
+        <div class="game-grid">
+            <!-- Dummy live games -->
+            <div class="game-card">
+                <img src="https://i.imgur.com/live-roulette.jpg" alt="Live Roulette">
+                <h4>Live Roulette</h4>
+                <div class="buttons">
+                    <button class="demo-btn" onclick="alert('Live Demo Coming Soon')">Demo</button>
+                    <button class="real-btn" onclick="realPlay()">Real Play</button>
+                </div>
+            </div>
+            <!-- Dodaj blackjack, baccarat, itd. -->
+        </div>
+    </section>
+
+    <!-- Sports sekcija (dummy bet builder, live streaming) -->
+    <section id="sports" class="section">
+        <h3>Sports Betting</h3>
+        <div class="sports-grid">
+            <div class="sport-card">
+                <img src="https://i.imgur.com/soccer-bet.jpg" alt="Soccer">
+                <h4>Soccer</h4>
+                <button onclick="alert('Build Bet')">Bet Builder</button>
+                <button onclick="alert('Live Streaming Started')">Live Stream</button>
+            </div>
+            <!-- Dodaj eSports, racebook, itd. -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>VegasCasino © 2026 | Responsible Gambling | Terms | Privacy | Support</p>
+        <div class="partners">
+            <img src="https://i.imgur.com/pragmatic-logo.png" alt="Pragmatic Play">
+            <!-- Dodaj logos BTC, ETH, itd. -->
+        </div>
+    </footer>
+
+    <!-- Modali (delujoči) -->
     <div id="demoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
-            <h3 id="gameTitle">Loading game...</h3>
-            <iframe id="demoFrame" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+            <h3 id="gameTitle">Loading...</h3>
+            <iframe id="demoFrame" width="100%" height="600" frameborder="0"></iframe>
         </div>
     </div>
 
-    <!-- Real Play Modal -->
     <div id="realModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
-            <h3>Play for Real Money</h3>
-            <p>Please login or register to continue.</p>
-            <button class="login modal-btn">Login</button>
-            <button class="register modal-btn">Sign Up</button>
+            <h3>Real Money Play</h3>
+            <p>Login to play for real.</p>
+            <button onclick="alert('Logged In')">Login</button>
+        </div>
+    </div>
+
+    <div id="depositModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Deposit Crypto</h3>
+            <select>
+                <option>BTC</option>
+                <option>ETH</option>
+            </select>
+            <input type="text" placeholder="Amount">
+            <button onclick="alert('Deposit Successful!')">Deposit</button>
+        </div>
+    </div>
+
+    <div id="withdrawModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Withdraw Crypto</h3>
+            <select>
+                <option>BTC</option>
+                <option>ETH</option>
+            </select>
+            <input type="text" placeholder="Amount">
+            <input type="text" placeholder="Wallet Address">
+            <button onclick="alert('Withdrawal Successful!')">Withdraw</button>
+        </div>
+    </div>
+
+    <!-- Dodatni modali za sidebar -->
+    <div id="raffleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Raffle Details</h3>
+            <p>Join the weekly raffle!</p>
+        </div>
+    </div>
+
+    <div id="promotionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Promotions</h3>
+            <p>Current bonuses and offers.</p>
+        </div>
+    </div>
+
+    <div id="rewardsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Rewards</h3>
+            <p>VIP levels and rewards.</p>
+        </div>
+    </div>
+
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>Support</h3>
+            <p>Chat with support.</p>
+            <input type="text" placeholder="Message">
+            <button onclick="alert('Message Sent')">Send</button>
         </div>
     </div>
 
