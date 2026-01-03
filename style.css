@@ -1,37 +1,40 @@
-body { background: #0f0028; color: #fff; font-family: 'Arial', sans-serif; margin: 0; padding: 0; }
-.sidebar { position: fixed; left: 0; top: 70px; width: 70px; background: #1a0033; height: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 20px; gap: 25px; z-index: 90; }
-.icon { font-size: 28px; cursor: pointer; opacity: 0.7; transition: 0.3s; }
-.icon:hover { opacity: 1; color: #00ffaa; }
+body { background: #0a001f; color: white; font-family: Arial, sans-serif; margin: 0; }
+.sidebar { position: fixed; left: 0; top: 80px; width: 60px; background: #12052f; display: flex; flex-direction: column; align-items: center; gap: 20px; z-index: 99; height: calc(100% - 80px); }
+.icon { font-size: 24px; cursor: pointer; transition: color 0.3s; }
+.icon:hover { color: #00ffaa; }
 
-header { position: fixed; top: 0; width: 100%; background: #1a0033; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
-.logo { font-size: 32px; font-weight: bold; color: #ffcc00; }
-.wallet span { background: #ffcc00; color: #000; padding: 8px 20px; border-radius: 10px; font-weight: bold; font-size: 20px; margin-right: 10px; }
-.deposit { background: #ffcc00; color: #000; border: none; font-size: 28px; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-weight: bold; }
-nav a { color: #ccc; margin: 0 15px; text-decoration: none; font-weight: bold; }
-.login { background: transparent; color: #fff; border: 2px solid #fff; padding: 10px 25px; border-radius: 10px; margin-left: 20px; }
-.register { background: #00ffaa; color: #000; padding: 10px 25px; border-radius: 10px; font-weight: bold; }
+header { background: #12052f; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; z-index: 100; }
+.logo { color: #ffba08; font-size: 30px; font-weight: bold; }
+.wallet span { font-size: 20px; }
+.deposit { background: #ffba08; color: black; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
 
-.hero { padding: 120px 20px 60px; text-align: center; background: linear-gradient(to bottom, #2a0055, #0f0028); }
-.raffle { background: #1a0033; max-width: 900px; margin: 0 auto; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-.raffle h2 { font-size: 50px; color: #ffcc00; margin: 0; }
-#countdown { font-size: 36px; color: #00ffaa; margin: 20px 0; }
-.learn-more { background: #fff; color: #000; padding: 12px 30px; border-radius: 30px; font-weight: bold; margin: 20px 0; }
+nav a { color: white; margin: 0 15px; text-decoration: none; }
+.login { background: #fff; color: #12052f; border: none; padding: 10px 20px; border-radius: 8px; }
+.register { background: #00ffaa; color: black; border: none; padding: 10px 20px; border-radius: 8px; }
 
-.section { padding: 40px 20px; }
-h3 { text-align: center; font-size: 38px; color: #ffcc00; margin-bottom: 40px; }
+.hero { padding: 100px 20px 50px; text-align: center; }
+.raffle { background: #1a0b3d; padding: 40px; border-radius: 15px; max-width: 800px; margin: 0 auto; }
+.raffle h2 { color: #ffba08; font-size: 40px; }
 
-.game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
-.game-card { background: #1a0033; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.7); transition: transform 0.3s; cursor: pointer; }
-.game-card:hover { transform: translateY(-15px); }
-.game-card img { width: 100%; height: 200px; object-fit: cover; }
-.bonus-badge { position: absolute; top: 15px; left: 15px; background: linear-gradient(45deg, #ff00aa, #00ffaa); padding: 8px 15px; border-radius: 30px; font-size: 14px; font-weight: bold; }
-.game-card h4 { text-align: center; padding: 15px; color: #00ffaa; font-size: 22px; margin: 0; }
-.game-card p { text-align: center; color: #aaa; margin: 0 0 15px; }
-.buttons { display: flex; padding: 15px; gap: 15px; }
-.demo-btn { flex: 1; background: #333; color: #fff; border: none; padding: 14px; border-radius: 12px; font-weight: bold; }
-.real-btn { flex: 1; background: linear-gradient(45deg, #00ffaa, #00cc88); color: #000; border: none; padding: 14px; border-radius: 12px; font-weight: bold; }
+.search-section { padding: 20px; text-align: center; }
+#searchInput { width: 50%; padding: 10px; border-radius: 8px; border: none; }
 
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; }
-.modal-content { background: #1a0033; padding: 30px; border-radius: 25px; width: 90%; max-width: 1000px; position: relative; text-align: center; box-shadow: 0 0 30px #00ffaa; }
-.close { position: absolute; top: 15px; right: 25px; font-size: 50px; color: #aaa; cursor: pointer; }
-.modal-btn { padding: 15px 40px; margin: 15px; border-radius: 12px; font-weight: bold; font-size: 18px; }
+.section { padding: 50px 20px; }
+h3 { text-align: center; color: #ffba08; font-size: 30px; }
+
+.game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.game-card { background: #16213e; border-radius: 15px; overflow: hidden; cursor: pointer; transition: transform 0.3s; }
+.game-card:hover { transform: translateY(-10px); }
+.game-card img { width: 100%; height: 180px; object-fit: cover; }
+.bonus-badge { position: absolute; top: 10px; left: 10px; background: linear-gradient(45deg, #ff00aa, #00ffaa); padding: 5px 10px; border-radius: 20px; }
+.game-card h4 { text-align: center; color: #00ffaa; }
+.buttons { display: flex; gap: 10px; padding: 10px; }
+.demo-btn { flex: 1; background: #1a1a2e; color: white; border: none; padding: 10px; border-radius: 8px; }
+.real-btn { flex: 1; background: #00ffaa; color: black; border: none; padding: 10px; border-radius: 8px; }
+
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+.modal-content { background: #16213e; margin: 15% auto; padding: 20px; border-radius: 15px; width: 80%; }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+
+footer { background: #12052f; padding: 20px; text-align: center; }
+.partners img { height: 30px; margin: 0 10px; }
