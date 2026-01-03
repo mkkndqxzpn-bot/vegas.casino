@@ -1,4 +1,3 @@
-// Timer
 function startTimer() {
     let days = 2, hours = 3, minutes = 43, seconds = 0;
     setInterval(() => {
@@ -20,56 +19,57 @@ function startTimer() {
 }
 startTimer();
 
-// Open Demo
 function openDemo(symbol, title) {
     document.getElementById('gameTitle').textContent = title;
     document.getElementById('demoFrame').src = `https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=${symbol}&lang=en&cur=EUR`;
-    document.getElementById('demoModal').style.display = 'block';
+    document.getElementById('demoModal').style.display = 'flex';
 }
 
-// Real Play
 function realPlay() {
-    document.getElementById('realModal').style.display = 'block';
+    document.getElementById('realModal').style.display = 'flex';
 }
 
-// Close Modal
 function closeModal() {
-    document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+    document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
     document.getElementById('demoFrame').src = '';
 }
 
-// Deposit Modal
 function openDepositModal() {
-    document.getElementById('depositModal').style.display = 'block';
+    document.getElementById('depositModal').style.display = 'flex';
 }
 
-// Withdraw Modal
 function openWithdrawModal() {
-    document.getElementById('withdrawModal').style.display = 'block';
+    document.getElementById('withdrawModal').style.display = 'flex';
 }
 
-// Sidebar Functions
 function openRaffleModal() {
-    document.getElementById('raffleModal').style.display = 'block';
+    document.getElementById('raffleModal').style.display = 'flex';
 }
 
 function openPromotionsModal() {
-    document.getElementById('promotionsModal').style.display = 'block';
+    document.getElementById('promotionsModal').style.display = 'flex';
 }
 
 function openRewardsModal() {
-    document.getElementById('rewardsModal').style.display = 'block';
+    document.getElementById('rewardsModal').style.display = 'flex';
 }
 
 function openSupportModal() {
-    document.getElementById('supportModal').style.display = 'block';
+    document.getElementById('supportModal').style.display = 'flex';
 }
 
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+function openLoginModal() {
+    document.getElementById('loginModal').style.display = 'flex';
 }
 
-// Search Filter
+function openRegisterModal() {
+    document.getElementById('registerModal').style.display = 'flex';
+}
+
+function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+}
+
 function filterGames() {
     let input = document.getElementById('searchInput').value.toLowerCase();
     let cards = document.querySelectorAll('.game-card');
@@ -79,7 +79,6 @@ function filterGames() {
     });
 }
 
-// Close on outside click
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) closeModal();
 };
